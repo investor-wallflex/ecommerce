@@ -576,7 +576,7 @@ a {
 }
   .helpcart {
   gap: 10px;
-  
+  padding-right: 50px;
   
   }
 
@@ -690,9 +690,8 @@ width: 30px; /* Smaller cart icon on mobile */
 height: 30px;
 }
 .helpcart {
-
-
 gap: 10px;
+padding-right: 50px;
 
 
 }
