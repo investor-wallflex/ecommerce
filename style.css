@@ -95,6 +95,7 @@ header{
     align-items: center;
     text-align: center;
     gap: 50px;
+
     
     
 }
@@ -471,7 +472,7 @@ header {
 
 .item-name {
   font-size: 16px;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: black;
 }
 
@@ -520,6 +521,8 @@ a {
   width: 100%;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 /* Responsive Styles */
@@ -568,7 +571,10 @@ a {
   height: 30px;
 }
   .helpcart {
-  margin-right: 50px;
+  margin-right: 100px;
+  border: solid black;
+  gap: 10px;
+  
   
   }
 
@@ -640,10 +646,6 @@ a {
 /* For mobile devices */
 @media (max-width: 480px) {
   body {
-      padding: 10px;
-  }
-
-  body {
     padding: 20px;
 }
 
@@ -651,7 +653,12 @@ a {
   flex-direction: column;
   align-items: flex-start;
   
-
+  
+ 
+}
+.logo img{
+  width: 100px;
+  min-height: 70px;
 }
 
 .savingholidaybanner{
@@ -681,10 +688,29 @@ width: 30px; /* Smaller cart icon on mobile */
 height: 30px;
 }
 .helpcart {
-  display: flex;
-    /* flex-direction: column; */
-    gap: 0px;
-    text-align: left;
+margin-right: 100px;
+border: solid black;
+gap: 10px;
+
+
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: white;
+  color: #3071A9;
+  border: 1px solid #007BFF;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 5px;
+  width: 10px;
+  height: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
