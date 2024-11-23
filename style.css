@@ -533,116 +533,128 @@ a {
 /* For tablets and below */
 @media (max-width: 768px) {
   body {
-      padding: 20px;
-  }
+    padding: 20px;
+}
 
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-   
-    
-   
-  }
-  .logo img{
-    width: 100px;
-    min-height: 70px;
-  }
+.header {
+  flex-direction: column;
+  align-items: flex-start;
+ 
+  /* padding-left: 20px; */
+ 
+}
+
+.logo img{
+  width: 100px;
+  min-height: 70px;
+}
+
+.banner{
+  padding-left: 15px;
+  margin-top: 60px;
+}
+
+.head{
+  padding-left: 15px;
+}
 
 .savingholidaybanner{
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
+/* padding: 20px; */
 }
-  .search-container {
-      width: 40%;
-  }
-
-  .search-input {
-    font-size: 14px; /* Adjust input font size for better fit */
-    display: none;
+.search-container {
+    width: 40%;
 }
 
-.search-button {
-  transform: scale(0.8); /* Make the search button smaller */
+.search-input {
+  font-size: 14px; /* Adjust input font size for better fit */
   display: none;
 }
 
+.search-button {
+transform: scale(0.8); /* Make the search button smaller */
+display: none;
+}
+
 .cart-container {
-  margin-left: 10px; /* Adjust spacing for cart */
+margin-left: 10px; /* Adjust spacing for cart */
 }
 
 .cart-icon {
-  width: 30px; /* Smaller cart icon on mobile */
-  height: 30px;
+width: 30px; /* Smaller cart icon on mobile */
+height: 30px;
 }
-  .helpcart {
-  gap: 10px;
-  padding-right: 50px;
-  
-  }
+.helpcart {
+gap: 10px;
+padding-right: 50px;
 
-  .cart-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: white;
-    color: #3071A9;
-    border: 1px solid #007BFF;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 5px;
-    width: 10px;
-    height: 10px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-  }
+}
 
-  .container {
-      padding: 10px;
-  }
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: white;
+  color: #3071A9;
+  border: 1px solid #007BFF;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 5px;
+  width: 10px;
+  height: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 
-  .head {
-      flex-direction: column;
-      text-align: center;
-      gap: 20px;
-  }
+.container {
+    padding: 10px;
+}
 
-  .item-list {
-      /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  }
-  .item {
-      padding: 10px;
-      text-align: center;
-  }
-
-  .qrcode {
-      width: 80px;
-      height: 80px;
-  }
-  .container {
-    display: flex;
+.head {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .sidebar{
-    min-width: 80%;
-    justify-items: left;
-    align-items: center;
-  }
-  h2{
-    color: black;
-  }
-  sidebar ul li  {
-    font-size: xx-large;
-    color: black;
-  }
-  .content{
-    display: flex;
-    flex-direction: column;
-  }
+    text-align: center;
+    gap: 20px;
+}
+
+.item-list {
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    /* padding-left: 35px; */
+}
+.item {
+    padding: 10px;
+    text-align: center;
+}
+
+.qrcode {
+    width: 80px;
+    height: 80px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar{
+  min-width: 80%;
+  justify-items: left;
+  align-items: center;
+}
+h2{
+  color: black;
+}
+sidebar ul li  {
+  font-size: xx-large;
+  color: black;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+}
 }
 
 /* For mobile devices */
@@ -654,7 +666,8 @@ a {
 .header {
   flex-direction: column;
   align-items: flex-start;
-  
+  /* width: 100%; */
+ 
   
  
 }
@@ -693,7 +706,6 @@ height: 30px;
 gap: 10px;
 padding-right: 50px;
 
-
 }
 
 .cart-count {
@@ -727,6 +739,7 @@ padding-right: 50px;
 .item-list {
     /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    padding-left: 35px;
 }
 .item {
     padding: 10px;
