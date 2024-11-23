@@ -40,7 +40,7 @@
   <script>
 
  // Retrieve cart items from localStorage
-const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
 const cartItemsContainer = document.querySelector('.cart-items');
 const subtotalElement = document.getElementById('subtotal');
 
@@ -65,7 +65,7 @@ function renderCartItems() {
                 <p><strong>${item.name}</strong></p>
                 <p>QTY 
                     <select onchange="updateQuantity('${item.id}', this.value)">
-                        ${[1, 2, 3, 4, 5].map(qty => `
+                        ${[1, 2, 3, 4, 5, 6, 7].map(qty => `
                             <option value="${qty}" ${qty == item.quantity ? 'selected' : ''}>${qty}</option>
                         `).join('')}
                     </select>
@@ -92,7 +92,7 @@ function updateQuantity(itemId, quantity) {
     const item = cartItems.find(item => item.id === itemId);
     if (item) {
         item.quantity = parseInt(quantity, 10);
-        localStorage.setItem('cart', JSON.stringify(cartItems));
+        sessionStorage.setItem('cart', JSON.stringify(cartItems));
         renderCartItems();
     }
 }
@@ -102,7 +102,7 @@ function removeItem(itemId) {
     const itemIndex = cartItems.findIndex(item => item.id === itemId);
     if (itemIndex > -1) {
         cartItems.splice(itemIndex, 1); // Remove the item from the array
-        localStorage.setItem('cart', JSON.stringify(cartItems)); // Update localStorage
+        sessionStorage.setItem('cart', JSON.stringify(cartItems)); // Update localStorage
         renderCartItems(); // Re-render the cart
     }
 }

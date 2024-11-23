@@ -168,14 +168,14 @@ function showCartCount() {
 
 // Function to load cart from localStorage
 function loadCart() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     cartCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Update cart count based on items in cart
     updateCartCount();
 }
 
 // Function to add item to cart
 function addItemToCart(item) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
     const existingItem = cart.find(cartItem => cartItem.id === item.id);
 
     if (existingItem) {
@@ -184,7 +184,7 @@ function addItemToCart(item) {
         cart.push(item);
     }
 
-    localStorage.setItem('cart', JSON.stringify(cart));
+    sessionStorage.setItem('cart', JSON.stringify(cart));
     cartCount += item.quantity;
     updateCartCount();
     showCartCount();
