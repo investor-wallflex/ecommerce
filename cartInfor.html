@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./cartInfo.css">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <div class="cart-container">
+    <header>
+      <a href="index.html" class="go-back">&larr; Continue shopping</a>
+    </header>
+    <div class="cart-items">
+      <h2>Items</h2>
+      <!-- Cart items will be injected here -->
+    </div>
+    <div class="cart-summary">
+      <p>Cart Subtotal: <strong id="subtotal">$0.00</strong></p>
+      <div class="promo-code">
+        <input type="text" placeholder="Promo code">
+        <button>Apply</button>
+      </div>
+      <label>
+        <input type="checkbox" checked> Apply Shipping Warranty for $0.98
+      </label>
+      <button class="checkout-button">Secure Checkout</button>
+      <div class="payment-methods">
+        <img src="./image/visa logo.PNG" alt="Visa">
+        <img src="./image/amex logo.PNG" alt="AMEX">
+        <img src="./image/master card.PNG" alt="MasterCard">
+        <img src="./image/discover logo.PNG" alt="Discover">
+        <img src="./image/paypal logo.PNG" alt="PayPal">
+        <img src="./image/cashapp logo.PNG" alt="cashapp">
+        <img src="./image/bitcoin.PNG" alt="bitcoin">
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+ // Retrieve cart items from localStorage
+const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+const cartItemsContainer = document.querySelector('.cart-items');
+const subtotalElement = document.getElementById('subtotal');
+
+// Function to render cart items
+function renderCartItems() {
+    cartItemsContainer.innerHTML = ''; // Clear the container first
+    let totalPrice = 0; // Reset total price
+
+    if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty. Add items from the main page!</p>';
+        subtotalElement.textContent = `$${totalPrice.toFixed(2)}`;
+        return;
+    }
+
+    cartItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        
+        itemElement.innerHTML = `
+            <img src="${item.imgSrc}" alt="${item.name}">
+            <div class="item-details">
+                <p><strong>${item.name}</strong></p>
+                <p>QTY 
+                    <select onchange="updateQuantity('${item.id}', this.value)">
+                        ${[1, 2, 3, 4, 5].map(qty => `
+                            <option value="${qty}" ${qty == item.quantity ? 'selected' : ''}>${qty}</option>
+                        `).join('')}
+                    </select>
+                </p>
+                <div class="item-actions">
+                    <button onclick="removeItem('${item.id}')">Remove Item</button>
+                </div>
+            </div>
+            <p class="item-price">$${(item.price * item.quantity).toFixed(2)}</p>
+        `;
+
+        cartItemsContainer.appendChild(itemElement);
+
+        // Update the total price
+        totalPrice += item.price * item.quantity;
+    });
+
+    // Update the subtotal
+    subtotalElement.textContent = `$${totalPrice.toFixed(2)}`;
+}
+
+// Function to update quantity
+function updateQuantity(itemId, quantity) {
+    const item = cartItems.find(item => item.id === itemId);
+    if (item) {
+        item.quantity = parseInt(quantity, 10);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        renderCartItems();
+    }
+}
+
+// Function to remove an item
+function removeItem(itemId) {
+    const itemIndex = cartItems.findIndex(item => item.id === itemId);
+    if (itemIndex > -1) {
+        cartItems.splice(itemIndex, 1); // Remove the item from the array
+        localStorage.setItem('cart', JSON.stringify(cartItems)); // Update localStorage
+        renderCartItems(); // Re-render the cart
+    }
+}
+
+// Initialize the cart
+renderCartItems();
+
+  </script>
+</body>
+</html>
