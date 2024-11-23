@@ -595,11 +595,11 @@ width: 30px; /* Smaller cart icon on mobile */
 height: 30px;
 }
 .helpcart {
-gap: 10px;
-/* padding-right: 60px; */
+gap: 5gitpx;
+padding-right: 100px;
 /* border: solid black; */
 max-width: fit-content;
-margin-right: 20px;
+border: solid black;
 
 }
 
@@ -728,10 +728,11 @@ height: 30px;
 }
 .helpcart {
   gap: 10px;
-  /* padding-right: 60px; */
+  padding-right: 60px;
   /* border: solid black; */
   max-width: fit-content;
   margin-right: 20px;
+  border: solid black;
 
 }
 
