@@ -115,38 +115,38 @@
      <script>
     // Data for items
     const items = [
-        { name: "Sony PlayStation Portal Remote Player & Pulse Explore Wireless Earbuds Bundle", price: 269.99, delivery: "Available", imgSrc: "./image/game 1.PNG" },
-        { name: "MacBook Air laptop (13-inch) - Apple M2 chip, 8-core CPU, 8-core GPU, 8GB memory, 256GB SSD storage", price: 749.99, delivery: "Available", imgSrc: "./image/apple laptop.PNG", promoted: true },
-        { name: "Sony Playstation 5 Digital Slim Bundle", price: 529.99, delivery: "Available", imgSrc: "./image/ps5.PNG" },
-        { name: "Beats Solo 4 Wireless On-Ear Headphones with AppleCare+ Included", price: 99.99, delivery: "Available", imgSrc: "./image/headset.PNG" },
-        { name: "Samsung 50 Class - DU6900D Series - 4K UHD LED Smart TV", price: 249.99, delivery: "Available", imgSrc: "./image/tv.PNG" },
-        { name: "Double Dish Rack For 2-tier Kitchen Countertops, Cutlery Drying Rack With 360° Drainage, Cutlery Drain Tray With Cutlery Rack And 4 Cup Holders, Cutlery Drain Over Sink Drying Rack", price: 20.97, delivery: "Available", imgSrc: "./image/plate roll temu.PNG" },
-        { name: "10 Inch HD Touch Screen Android Tablet - Tablets with 3GB RAM, 64GB ROM, 512GB Expand, WiFi, Wireless, Dual Camera, GMS Certification and Latest Android 13 OS", price: 53.69, delivery: "Available", imgSrc: "./image/adriod tab from temu.PNG" },
-        { name: "Men's Plaid Sherpa-Lined Hooded Jacket, Casual Style, Button Down Cozy Fleece Winter Coat, Warm Fashion Outerwear", price: 44.04, delivery: "Available", imgSrc: "./image/cloth fro temu.PNG" },
-        { name: "Plaid Pattern Button Front Fuzzy Jacket, Casual Thermal Long Sleeve Long Length Collar Coat For Fall & Winter, Women's Clothing", price: 19.59, delivery: "Available", imgSrc: "./image/lady jacket temu.PNG" },
-        { name: "10pcs Seamless Letter Print Briefs, Sexy Comfy Breathable Stretchy Intimates Panties, Women's Lingerie & Underwear", price: 13.25, delivery: "Available", imgSrc: "./image/panties from temu.PNG" },
-        { name: "Professional Men's Grooming Kit - T-Blade Trimmer, Nose Hair Trimmer, Hair Shaver Set, Electric Razor with LCD Display for Precise Cutting, Easy Cleaning, and Cordless Convenience - Bronze Color", price: 38.82, delivery: "Available", imgSrc: "./image/clipper from temu.PNG" },
-        { name: "Hickory Farms Sweet & Savory Snacks Gift Basket", price: 54.99, delivery: "Available", imgSrc: "./image/gift item.PNG" },
-        { name: "HP 17.3 Touchscreen Laptop - AMD Ryzen 5 7530U -1600 x 900 - Windows 11 - 16GB RAM - 1TB SSD", price: 449.99, delivery: "Available", imgSrc: "./image/hp laptop.PNG" },
-        { name: "14kt Yellow Gold Multi Link Twist Necklace", price: 799.99, delivery: "Available", imgSrc: "./image/gold chain.PNG" },
-        { name: "Hunter Avia II LED 52 Indoor Ceiling Fan with Light and Remote", price: 119.99, delivery: "Available", imgSrc: "./image/celling fan.PNG" },
-        { name: "CAT Cube Lithium 4-in-1 Portable Jump Starter", price: 109.99, delivery: "Available", imgSrc: "./image/jum starter.PNG" },
-        { name: "Traveler's Choice Breenon 19 Backpack", price: 49.99, delivery: "Available", imgSrc: "./image/bag for travelers.PNG" },
-        { name: "2-Day Delivery Red Bull Energy Drink, 8 4 fi oz, 24-count", price: 70, delivery: "Item may be available in your local warehouse, prices may vary.", imgSrc: "./image/red bull.PNG" },
-        { name: "All-Clad d3 12-piece Stainless Steel Cookware Set", price: 70, delivery: "Member Only Item", imgSrc: "./image/pan.PNG" },
-        { name: "Samsung 6.3 cu. ft. Smart Slide-in Induction Range with Smart Dial and Air Fry", price: 449.99, delivery: "Member Only Item", imgSrc: "./image/gas cooker.PNG" },
-        { name: "Thomasville Langdon Fabric Sectional with Chaise and Storage Ottoman, Gray", price: 1499.99, delivery: "Available", imgSrc: "./image/couch.PNG" },
-        { name: "Graco 4Ever Extend2Fit DLX 4-in-1 Car Seat", price: 149.00, delivery: "Member Only Item", imgSrc: "./image/babysitter.PNG" },
-        { name: "Nintendo Gameboy Color Pokemon Special Pikachu Edition Game Boy GBC", price: 149.00, delivery: "Only 1 left!", imgSrc: "./image/gameboy ebay.PNG" },
-        { name: "Apple iPhone 13 256GB Network Unlocked Very Good Condition", price: 343.56, delivery: "Free Shipping", imgSrc: "./image/iphone 13.PNG" },
-        { name: "Nike Dunk PE Low What the Duck Dunks Oregon + Book - HV1454-001 - Size 8.5", price: 499.99, delivery: "Available", imgSrc: "./image/fashion sneakers.PNG" },
-        { name: "Nike Jordan 4 Retro White Thunder - FQ8138-001 - Size 12M/13.5W", price: 269.99, delivery: "Available", imgSrc: "./image/jordan.PNG" },
-        { name: "Gucci Vintage Bag Blondie Clutch Handbag Interlocking Leather Brown Authentic", price: 628.00, delivery: "Available", imgSrc: "./image/gucci bag.PNG" },
-        { name: "Rolex Datejust 1601 Stainless Steel & 14K Gold (Linen Dial) 36mm Men's Watch", price: 4500.00, delivery: "", imgSrc: "./image/rolex.PNG" },
-        { name: "adidas Men's Heathered 3-Stripes Colorblocked Polo", price: 16.99, delivery: "Available ", imgSrc: "./image/addidas cloth.PNG" },
-        { name: "Thursday Boot Co Burgundy Black Combat Premium Womens Patent Leather Boots", price: 64.95, delivery: "Available", imgSrc: "./image/shoe boot.PNG" },
-        { name: "Canada Weather Gear Women's Long Puffer with Faux Fur and Sherpa Lined Hood", price: 52.99, delivery: "Available", imgSrc: "./image/women cloth.PNG" },
-        { name: "CHROME AZZARO Men Cologne 6.7 / 6.8 oz edt Men New in Box", price: 49.93, delivery: "Available", imgSrc: "./image/perfume.PNG" },
+        { id: 1, name: "Sony PlayStation Portal Remote Player & Pulse Explore Wireless Earbuds Bundle", price: 269.99, delivery: "Available", imgSrc: "./image/game 1.PNG" },
+        { id: 2,name: "MacBook Air laptop (13-inch) - Apple M2 chip, 8-core CPU, 8-core GPU, 8GB memory, 256GB SSD storage", price: 749.99, delivery: "Available", imgSrc: "./image/apple laptop.PNG", promoted: true },
+        { id: 3,name: "Sony Playstation 5 Digital Slim Bundle", price: 529.99, delivery: "Available", imgSrc: "./image/ps5.PNG" },
+        { id: 4,name: "Beats Solo 4 Wireless On-Ear Headphones with AppleCare+ Included", price: 99.99, delivery: "Available", imgSrc: "./image/headset.PNG" },
+        { id: 5,name: "Samsung 50 Class - DU6900D Series - 4K UHD LED Smart TV", price: 249.99, delivery: "Available", imgSrc: "./image/tv.PNG" },
+        { id: 6,name: "Double Dish Rack For 2-tier Kitchen Countertops, Cutlery Drying Rack With 360° Drainage, Cutlery Drain Tray With Cutlery Rack And 4 Cup Holders, Cutlery Drain Over Sink Drying Rack", price: 20.97, delivery: "Available", imgSrc: "./image/plate roll temu.PNG" },
+        { id: 7,name: "10 Inch HD Touch Screen Android Tablet - Tablets with 3GB RAM, 64GB ROM, 512GB Expand, WiFi, Wireless, Dual Camera, GMS Certification and Latest Android 13 OS", price: 53.69, delivery: "Available", imgSrc: "./image/adriod tab from temu.PNG" },
+        { id: 8,name: "Men`s Plaid Sherpa-Lined Hooded Jacket, Casual Style, Button Down Cozy Fleece Winter Coat, Warm Fashion Outerwear", price: 44.04, delivery: "Available", imgSrc: "./image/cloth fro temu.PNG" },
+        { id: 9,name: "Plaid Pattern Button Front Fuzzy Jacket, Casual Thermal Long Sleeve Long Length Collar Coat For Fall & Winter, Women`s Clothing", price: 19.59, delivery: "Available", imgSrc: "./image/lady jacket temu.PNG" },
+        { id: 10,name: "10pcs Seamless Letter Print Briefs, Sexy Comfy Breathable Stretchy Intimates Panties, Women`s Lingerie & Underwear", price: 13.25, delivery: "Available", imgSrc: "./image/panties from temu.PNG" },
+        { id: 11,name: "Professional Men`s Grooming Kit - T-Blade Trimmer, Nose Hair Trimmer, Hair Shaver Set, Electric Razor with LCD Display for Precise Cutting, Easy Cleaning, and Cordless Convenience - Bronze Color", price: 38.82, delivery: "Available", imgSrc: "./image/clipper from temu.PNG" },
+        { id: 12,name: "Hickory Farms Sweet & Savory Snacks Gift Basket", price: 54.99, delivery: "Available", imgSrc: "./image/gift item.PNG" },
+        { id: 13,name: "HP 17.3 Touchscreen Laptop - AMD Ryzen 5 7530U -1600 x 900 - Windows 11 - 16GB RAM - 1TB SSD", price: 449.99, delivery: "Available", imgSrc: "./image/hp laptop.PNG" },
+        { id: 14,name: "14kt Yellow Gold Multi Link Twist Necklace", price: 799.99, delivery: "Available", imgSrc: "./image/gold chain.PNG" },
+        { id: 15,name: "Hunter Avia II LED 52 Indoor Ceiling Fan with Light and Remote", price: 119.99, delivery: "Available", imgSrc: "./image/celling fan.PNG" },
+        { id: 16,name: "CAT Cube Lithium 4-in-1 Portable Jump Starter", price: 109.99, delivery: "Available", imgSrc: "./image/jum starter.PNG" },
+        { id: 17,name: "Traveler's Choice Breenon 19 Backpack", price: 49.99, delivery: "Available", imgSrc: "./image/bag for travelers.PNG" },
+        { id: 18,name: "2-Day Delivery Red Bull Energy Drink, 8 4 fi oz, 24-count", price: 70, delivery: "Item may be available in your local warehouse, prices may vary.", imgSrc: "./image/red bull.PNG" },
+        { id: 19,name: "All-Clad d3 12-piece Stainless Steel Cookware Set", price: 70, delivery: "Member Only Item", imgSrc: "./image/pan.PNG" },
+        { id: 20,name: "Samsung 6.3 cu. ft. Smart Slide-in Induction Range with Smart Dial and Air Fry", price: 449.99, delivery: "Member Only Item", imgSrc: "./image/gas cooker.PNG" },
+        { id: 21,name: "Thomasville Langdon Fabric Sectional with Chaise and Storage Ottoman, Gray", price: 1499.99, delivery: "Available", imgSrc: "./image/couch.PNG" },
+        { id: 22,name: "Graco 4Ever Extend2Fit DLX 4-in-1 Car Seat", price: 149.00, delivery: "Member Only Item", imgSrc: "./image/babysitter.PNG" },
+        { id: 23,name: "Nintendo Gameboy Color Pokemon Special Pikachu Edition Game Boy GBC", price: 149.00, delivery: "Only 1 left!", imgSrc: "./image/gameboy ebay.PNG" },
+        { id: 24,name: "Apple iPhone 13 256GB Network Unlocked Very Good Condition", price: 343.56, delivery: "Free Shipping", imgSrc: "./image/iphone 13.PNG" },
+        { id: 25,name: "Nike Dunk PE Low What the Duck Dunks Oregon + Book - HV1454-001 - Size 8.5", price: 499.99, delivery: "Available", imgSrc: "./image/fashion sneakers.PNG" },
+        { id: 26,name: "Nike Jordan 4 Retro White Thunder - FQ8138-001 - Size 12M/13.5W", price: 269.99, delivery: "Available", imgSrc: "./image/jordan.PNG" },
+        { id: 27,name: "Gucci Vintage Bag Blondie Clutch Handbag Interlocking Leather Brown Authentic", price: 628.00, delivery: "Available", imgSrc: "./image/gucci bag.PNG" },
+        { id: 28,name: "Rolex Datejust 1601 Stainless Steel & 14K Gold (Linen Dial) 36mm Men`s Watch", price: 4500.00, delivery: "", imgSrc: "./image/rolex.PNG" },
+        { id: 29,name: "Adidas Men`s Heathered 3-Stripes Colorblocked Polo", price: 16.99, delivery: "Available ", imgSrc: "./image/addidas cloth.PNG" },
+        { id: 30,name: "Thursday Boot Co Burgundy Black Combat Premium Women`s Patent Leather Boots", price: 64.95, delivery: "Available", imgSrc: "./image/shoe boot.PNG" },
+        { id: 31,name: "Canada Weather Gear Women`s Long Puffer with Faux Fur and Sherpa Lined Hood", price: 52.99, delivery: "Available", imgSrc: "./image/women cloth.PNG" },
+        { id: 32,name: "CHROME AZZARO Men`s Cologne 6.7 / 6.8 oz edt Men New in Box", price: 49.93, delivery: "Available", imgSrc: "./image/perfume.PNG" },
 
     ];
   
@@ -200,6 +200,8 @@ function handleAddToCart(item) {
 // Load the cart initially
 loadCart();
 
+
+
 // Generate items dynamically
 items.forEach(item => {
     const itemElement = document.createElement('div');
@@ -209,7 +211,8 @@ items.forEach(item => {
     }
 
     // Generate a unique id
-    item.id = item.name.replace(/\s+/g, '-').toLowerCase();  // Unique ID based on item name
+   item.id = `${item.name.replace(/\s+/g, '-').toLowerCase()}-${Math.random().toString(36).substr(2, 5)}`;
+  // Unique ID based on item name
 
     itemElement.innerHTML = `
         <img src="${item.imgSrc}" alt="${item.name}">

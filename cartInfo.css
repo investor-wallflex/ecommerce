@@ -1,105 +1,189 @@
+/* Basic Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-  }
-  a{
-    text-decoration: none;
-    color: #007bff;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Container for the cart */
+.cart-container {
+  max-width: 100%; /* Use 100% to take up full width */
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Add a percentage width for responsiveness */
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+/* Styling for the continue shopping link */
+.go-back {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Cart Items */
+.cart-items h2 {
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.cart-item img {
+  max-width: 80px;
+  width: 20%; /* Ensuring the image scales with the container */
+  height: auto;
+}
+
+.item-details {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.item-actions button {
+  margin-right: 10px;
+}
+
+.item-price {
+  font-weight: bold;
+}
+
+/* Cart Summary */
+.cart-summary {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.promo-code {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.promo-code input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.promo-code button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.checkout-button {
+  display: block;
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.payment-methods img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
   .cart-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px; /* Less padding on mobile for better space utilization */
+      width: 95%; /* Take up almost full width */
   }
-  
-  header {
-    margin-bottom: 20px;
-  }
-  
-  .continue-shopping {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .cart-items h2 {
-    margin-bottom: 10px;
-  }
-  
+
   .cart-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+      flex-direction: column; /* Stack the items vertically for smaller screens */
+      align-items: flex-start; /* Align items to the left */
   }
-  
+
   .cart-item img {
-    max-width: 80px;
+      max-width: 60px; /* Smaller image on mobile */
   }
-  
+
   .item-details {
-    flex-grow: 1;
-    margin-left: 15px;
+      margin-left: 0;
   }
-  
-  .item-actions button {
-    margin-right: 10px;
-  }
-  
-  .item-price {
-    font-weight: bold;
-  }
-  
-  .add-matching-item {
-    margin: 15px 0;
-    text-align: right;
-  }
-  
-  .cart-summary {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 2px solid #eee;
-  }
-  
-  .promo-code {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  
-  .promo-code input {
-    flex: 1;
-    padding: 8px;
-    margin-right: 10px;
-  }
-  
+
+  .promo-code input,
   .promo-code button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
+      padding: 6px; /* Smaller padding for better fit */
   }
-  
+
   .checkout-button {
-    display: block;
-    width: 100%;
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 10px;
+      padding: 12px; /* Larger button padding on mobile */
+      font-size: 14px;
   }
-  
+
   .payment-methods img {
-    height: 30px;
-    margin-right: 10px;
+      height: 25px; /* Smaller payment method icons on mobile */
   }
-  
+
+  .cart-summary {
+      padding: 10px; /* Reduced padding in the summary section */
+  }
+
+  .go-back {
+      font-size: 14px; /* Smaller font size for the back link */
+  }
+}
+
+/* For extra small devices (portrait phones, small tablets) */
+@media (max-width: 480px) {
+  .cart-container {
+      padding: 10px; /* Even smaller padding on extra small screens */
+  }
+
+  .cart-item {
+      flex-direction: column; /* Stack the items vertically */
+  }
+
+  .cart-item img {
+      max-width: 50px; /* Even smaller image */
+  }
+
+  .item-price {
+      font-size: 14px; /* Smaller font for price */
+  }
+
+  .promo-code input {
+      font-size: 14px;
+  }
+
+  .checkout-button {
+      padding: 10px; /* Smaller button size */
+      font-size: 14px;
+  }
+
+  .payment-methods img {
+      height: 20px; /* Even smaller payment icons */
+      margin-right: 5px;
+  }
+
+  .cart-items h2 {
+      font-size: 18px; /* Smaller heading */
+  }
+}
