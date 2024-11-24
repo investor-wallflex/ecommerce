@@ -107,21 +107,21 @@ header {
   height: 30px;
   margin-right: 10px;
 }
-
-/* Mobile responsiveness */
+/*
+/* Mobile responsiveness 
 @media (max-width: 768px) {
   .cart-container {
-      padding: 15px; /* Less padding on mobile for better space utilization */
-      width: 95%; /* Take up almost full width */
+      padding: 15px;  Less padding on mobile for better space utilization 
+      width: 95%; /* Take up almost full width 
   }
 
   .cart-item {
-      flex-direction: column; /* Stack the items vertically for smaller screens */
-      align-items: flex-start; /* Align items to the left */
+      flex-direction: column; /* Stack the items vertically for smaller screens *
+      align-items: flex-start;  Align items to the left 
   }
 
   .cart-item img {
-      max-width: 60px; /* Smaller image on mobile */
+      max-width: 60px; /* Smaller image on mobile *
   }
 
   .item-details {
@@ -130,35 +130,35 @@ header {
 
   .promo-code input,
   .promo-code button {
-      padding: 6px; /* Smaller padding for better fit */
+      padding: 6px; /* Smaller padding for better fit *
   }
 
   .checkout-button {
-      padding: 12px; /* Larger button padding on mobile */
+      padding: 12px; /* Larger button padding on mobile *
       font-size: 14px;
   }
 
   .payment-methods img {
-      height: 25px; /* Smaller payment method icons on mobile */
+      height: 25px; /* Smaller payment method icons on mobile *
   }
 
   .cart-summary {
-      padding: 10px; /* Reduced padding in the summary section */
+      padding: 10px; /* Reduced padding in the summary section *
   }
 
   .go-back {
-      font-size: 14px; /* Smaller font size for the back link */
+      font-size: 14px; /* Smaller font size for the back link *
   }
 }
 
-/* For extra small devices (portrait phones, small tablets) */
+/* For extra small devices (portrait phones, small tablets) 
 @media (max-width: 480px) {
   .cart-container {
-      padding: 10px; /* Even smaller padding on extra small screens */
+      padding: 10px; /* Even smaller padding on extra small screens *
   }
 
   .cart-item {
-      flex-direction: column; /* Stack the items vertically */
+      flex-direction: column; /* Stack the items vertically *
   }
 
   .cart-item img {
@@ -166,7 +166,7 @@ header {
   }
 
   .item-price {
-      font-size: 14px; /* Smaller font for price */
+      font-size: 14px; /* Smaller font for price *
   }
 
   .promo-code input {
@@ -174,16 +174,16 @@ header {
   }
 
   .checkout-button {
-      padding: 10px; /* Smaller button size */
+      padding: 10px; /* Smaller button size *
       font-size: 14px;
   }
 
   .payment-methods img {
-      height: 20px; /* Even smaller payment icons */
+      height: 20px; /* Even smaller payment icons *
       margin-right: 5px;
   }
 
   .cart-items h2 {
-      font-size: 18px; /* Smaller heading */
+      font-size: 18px; /* Smaller heading *
   }
-}
+} */
