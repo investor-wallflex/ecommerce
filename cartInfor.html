@@ -24,7 +24,7 @@
       <label>
         <input type="checkbox" checked> Apply Shipping Warranty for $0.98
       </label>
-      <button class="checkout-button">Secure Checkout</button>
+      <a href="javascript:void(0)"><button id="checkout-button" class="checkout-button">Secure Checkout</button></a>
       <div class="payment-methods">
         <img src="./image/visa logo.PNG" alt="Visa">
         <img src="./image/amex logo.PNG" alt="AMEX">
@@ -110,6 +110,19 @@ function removeItem(itemId) {
 
 // Initialize the cart
 renderCartItems();
+
+
+
+// Function to handle checkout
+document.getElementById('checkout-button').addEventListener('click', function () {
+    if (cartItems.length === 0) {
+        // Show an alert if the cart is empty
+        alert('Your cart is empty! Please add items before proceeding to checkout.');
+    } else {
+        // Navigate to the checkout page
+        window.location.href = 'checkout.html';
+    }
+});
 
 
 
