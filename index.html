@@ -52,6 +52,14 @@
         </div>
     </div>
 
+   <!-- this is where the message item not found will be displayed -->
+<div id="no-items-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Item cannot be found</p>
+    </div>
+  </div>
+  
     <!--another component-->
 
     <div class="savingholidaybanner">
@@ -128,6 +136,8 @@
       </div>
    
      <script>
+
+   
     // Data for items
     const items = [
         { id: 1, name: "Sony PlayStation Portal Remote Player & Pulse Explore Wireless Earbuds Bundle", price: 269.99, delivery: "Available", imgSrc: "./image/game 1.PNG" },
@@ -162,7 +172,8 @@
         { id: 30,name: "Thursday Boot Co Burgundy Black Combat Premium Women`s Patent Leather Boots", price: 64.95, delivery: "Available", imgSrc: "./image/shoe boot.PNG" },
         { id: 31,name: "Canada Weather Gear Women`s Long Puffer with Faux Fur and Sherpa Lined Hood", price: 52.99, delivery: "Available", imgSrc: "./image/women cloth.PNG" },
         { id: 32,name: "CHROME AZZARO Men`s Cologne 6.7 / 6.8 oz edt Men New in Box", price: 49.93, delivery: "Available", imgSrc: "./image/perfume.PNG" },
-
+        { id: 33,name: "LG gram 17 Touchscreen Intel EVO Edition Laptop - Intel Core Ultra 7-155H - WQXGA (2560 X 1600) - Windows 11", price: 1199.99, delivery: "Available", imgSrc: "./image/lg laptop.PNG" },
+        { id: 33,name: "The Fruit Company Holiday Celebration 8 Gift Box Tower", price: 59.99, delivery: "Available", imgSrc: "./image/xmax gift.PNG" },
     ];
   
     let cartCount = 0; // Total number of items in the cart
@@ -294,6 +305,153 @@ function moveSlide(direction) {
   const slider = document.querySelector(".slider");
   slider.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
+
+
+// this line of code deals with the search bar
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Get the search input and button
+    const searchInput = document.querySelector('.search-input');
+    const noRecordMessage = document.getElementById('no-record-message');
+    const searchButton = document.querySelector('.search-button');
+
+    // Function to filter items based on the search query
+    function filterItems(query) {
+        const filteredItems = items.filter(item =>
+            item.name.toLowerCase().includes(query.toLowerCase())
+        );
+
+        // Clear the current item list
+        itemList.innerHTML = '';
+
+        // Render filtered items
+        filteredItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('item');
+            if (item.promoted) {
+                itemElement.classList.add('promoted');
+            }
+
+            // Generate a unique id
+            item.id = `${item.name.replace(/\s+/g, '-').toLowerCase()}-${Math.random().toString(36).substr(2, 5)}`;
+
+            itemElement.innerHTML = `
+                <img src="${item.imgSrc}" alt="${item.name}">
+                <p class="item-name">${item.name}</p>
+                <p class="price">$${item.price.toFixed(2)}</p>
+                <p class="location">${item.delivery}</p>
+                <button class="add-to-cart-button">Add to Cart</button>
+                <div class="quantity-controls" style="display: none;">
+                    <button class="decrement">-</button>
+                    <span class="quantity">1</span>
+                    <button class="increment">+</button>
+                </div>
+            `;
+
+            itemList.appendChild(itemElement);
+
+            const addToCartButton = itemElement.querySelector('.add-to-cart-button');
+            const quantityControls = itemElement.querySelector('.quantity-controls');
+            const incrementButton = itemElement.querySelector('.increment');
+            const decrementButton = itemElement.querySelector('.decrement');
+            const quantitySpan = itemElement.querySelector('.quantity');
+
+            // Add item to cart and manage quantity
+            addToCartButton.addEventListener('click', () => {
+                const itemToAdd = { ...item, quantity: parseInt(quantitySpan.textContent) };
+                addItemToCart(itemToAdd);
+                quantityControls.style.display = 'block';
+            });
+
+            // Increment quantity
+            incrementButton.addEventListener('click', () => {
+                let quantity = parseInt(quantitySpan.textContent);
+                quantitySpan.textContent = quantity + 1;
+            });
+
+            // Decrement quantity
+            decrementButton.addEventListener('click', () => {
+                let quantity = parseInt(quantitySpan.textContent);
+                if (quantity > 1) {
+                    quantitySpan.textContent = quantity - 1;
+                }
+            });
+        });
+    }
+
+    // Event listener for the search button
+    searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        if (query) {
+            filterItems(query);
+        } else {
+            // If no search input, show all items
+            itemList.innerHTML = '';
+            items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+                if (item.promoted) {
+                    itemElement.classList.add('promoted');
+                }
+
+                // Generate a unique id
+                item.id = `${item.name.replace(/\s+/g, '-').toLowerCase()}-${Math.random().toString(36).substr(2, 5)}`;
+
+                itemElement.innerHTML = `
+                    <img src="${item.imgSrc}" alt="${item.name}">
+                    <p class="item-name">${item.name}</p>
+                    <p class="price">$${item.price.toFixed(2)}</p>
+                    <p class="location">${item.delivery}</p>
+                    <button class="add-to-cart-button">Add to Cart</button>
+                    <div class="quantity-controls" style="display: none;">
+                        <button class="decrement">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increment">+</button>
+                    </div>
+                `;
+
+                itemList.appendChild(itemElement);
+
+                const addToCartButton = itemElement.querySelector('.add-to-cart-button');
+                const quantityControls = itemElement.querySelector('.quantity-controls');
+                const incrementButton = itemElement.querySelector('.increment');
+                const decrementButton = itemElement.querySelector('.decrement');
+                const quantitySpan = itemElement.querySelector('.quantity');
+
+                // Add item to cart and manage quantity
+                addToCartButton.addEventListener('click', () => {
+                    const itemToAdd = { ...item, quantity: parseInt(quantitySpan.textContent) };
+                    addItemToCart(itemToAdd);
+                    quantityControls.style.display = 'block';
+                });
+
+                // Increment quantity
+                incrementButton.addEventListener('click', () => {
+                    let quantity = parseInt(quantitySpan.textContent);
+                    quantitySpan.textContent = quantity + 1;
+                });
+
+                // Decrement quantity
+                decrementButton.addEventListener('click', () => {
+                    let quantity = parseInt(quantitySpan.textContent);
+                    if (quantity > 1) {
+                        quantitySpan.textContent = quantity - 1;
+                    }
+                });
+            });
+        }
+    });
+
+    // Optional: add an event listener for the "Enter" key on search input
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+                filterItems(query);
+            }
+        }
+    });
+});
 
 
 
