@@ -19,7 +19,7 @@
       we're next able. The average response time is under 24 hours but is subject to change during
       busier seasons and holidays. We appreciate your patience!
     </p>
-
+    <div id="faq-answer" class="faq-answer" style="display: none;"></div>
     <div class="faq-section">
       <div class="faq-category">
         <h2>Ordering</h2>
@@ -43,8 +43,8 @@
         <h2>Product Information</h2>
         <ul>
           <li><a href="#">What type of products do you offer?</a></li>
-          <li><a href="#">How does the products generally fit?</a></li>
-          <li><a href="#">How should I wash and care for my apparel purchase?</a></li>  
+         
+          
         </ul>
       </div>
       <div class="faq-category">
@@ -53,8 +53,7 @@
           <li><a href="#">Can I track my order?</a></li>
           <li><a href="#">I haven’t received a shipment notification.</a></li>
           <li><a href="#">My tracking number isn’t working.</a></li>
-          <li><a href="#">I need help with a late order.</a></li>
-          <li><a href="#">What can I do if I entered the wrong shipping address?</a></li>
+          <li><a href="#">What can I do if I entered the wrong shipping address?</a></li>  
         </ul>
       </div>
       <div class="faq-category">
@@ -91,5 +90,219 @@
       </div>
     </div>
   </div>
+
+
+
+  <script>
+
+  // Add questions and answers
+  const faqData = {
+    "What countries do you ship to?": `
+    <p>We ship to the following countries:</p>
+    <div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr><td>AL</td><td>Albania</td><td>LT</td><td>Lithuania</td></tr>
+          <tr><td>AD</td><td>Andorra</td><td>LU</td><td>Luxembourg</td></tr>
+          <tr><td>AG</td><td>Antigua and Barbuda</td><td>MO</td><td>Macao</td></tr>
+          <tr><td>AR</td><td>Argentina</td><td>MK</td><td>Macedonia</td></tr>
+          <tr><td>AW</td><td>Aruba</td><td>MY</td><td>Malaysia</td></tr>
+          <tr><td>AU</td><td>Australia</td><td>MV</td><td>Maldives</td></tr>
+          <tr><td>AT</td><td>Austria</td><td>MT</td><td>Malta</td></tr>
+          <tr><td>AZ</td><td>Azerbaijan</td><td>MU</td><td>Mauritius</td></tr>
+          <tr><td>BS</td><td>Bahamas (the)</td><td>MX</td><td>Mexico</td></tr>
+          <tr><td>BD</td><td>Bangladesh</td><td>MD</td><td>Moldova, Republic of</td></tr>
+          <tr><td>BB</td><td>Barbados</td><td>MC</td><td>Monaco</td></tr>
+          <tr><td>BE</td><td>Belgium</td><td>ME</td><td>Montenegro</td></tr>
+          <tr><td>BM</td><td>Bermuda</td><td>NL</td><td>Netherlands</td></tr>
+          <tr><td>BA</td><td>Bosnia and Herzegovina</td><td>NZ</td><td>New Zealand</td></tr>
+          <tr><td>BG</td><td>Bulgaria</td><td>NO</td><td>Norway</td></tr>
+          <tr><td>CA</td><td>Canada</td><td>PK</td><td>Pakistan</td></tr>
+          <tr><td>CR</td><td>Costa Rica</td><td>PA</td><td>Panama</td></tr>
+          <tr><td>HR</td><td>Croatia</td><td>PE</td><td>Peru</td></tr>
+          <tr><td>CY</td><td>Cyprus</td><td>PL</td><td>Poland</td></tr>
+          <tr><td>CZ</td><td>Czech Republic</td><td>PT</td><td>Portugal</td></tr>
+          <tr><td>DK</td><td>Denmark</td><td>PR</td><td>Puerto Rico</td></tr>
+          <tr><td>DM</td><td>Dominica</td><td>QA</td><td>Qatar</td></tr>
+          <tr><td>EG</td><td>Egypt</td><td>RO</td><td>Romania</td></tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+    <p>If your country is not listed, please contact our support team for further assistance.</p>
+  `,
+    "Can I change or cancel my order?": "Yes, you can change or cancel your order within 24 hours of placing it. Contact support for assistance.",
+    "I got an error when placing my order. What went wrong?": "Errors can happen due to network issues or incorrect payment details. Please try again or contact support.",
+    "I didn’t receive an order confirmation email.": "Check your spam folder or contact support to confirm your email address.",
+    "What if I can’t find what I am looking for?": " Some items don’t always become available again but feel free  using the search bar or contact support for assistance.",
+    "Can I ship to multiple addresses?": "At this time, we cannot ship to multiple addresses in one order. Please place separate orders to ship to different addresses.",
+    "When will my order ship out?": "Orders usually ship 3-5 days from when the production process starts. Actual shipping times and delivery dates may vary depending on the local postal service in your area. For domestic orders, final delivery and tracking are handled by USPS",
+    "When will my order arrive? Can it be expedited?": "<p>Your order will arrive approximately 5-10 business days after it’s shipped. For Alaska, Hawaii, Puerto Rico, and International orders, please allow 2-4 weeks for delivery.</p><p>We use different shipping partners, but final delivery is usually via your local postal service. To double-check ETA’s, check the estimated delivery date on your receipt or contact us at any time.</p><p>Rush production and expedited shipping options are available for qualified orders at an additional cost. Rush production guarantees your order will go to production immediately, while expedited shipping guarantees your order will arrive faster than other shipping methods. </p>",
+    "What type of products do you offer?": `
+  <p>We offer a wide range of high-quality products designed to suit your needs and lifestyle. Our catalog includes:</p>
+  <ul>
+    <li><strong>Apparel:</strong> Trendy and comfortable clothing for men, women, and kids.</li>
+    <li><strong>Accessories:</strong> Stylish bags, jewelry, belts, and more to complement your outfits.</li>
+    <li><strong>Home Goods:</strong> Beautiful home décor, kitchen essentials, and cozy bedding.</li>
+    <li><strong>Electronics:</strong> The latest gadgets, tech accessories, and must-have devices.</li>
+    <li><strong>Health & Beauty:</strong> Premium skincare, makeup, and personal care items.</li>
+    <li><strong>Gifts:</strong> Unique and thoughtful gifts for every occasion.</li>
+  </ul>
+  <p>We carefully curate our collection to ensure you receive the best in quality, value, and style. Check out our <a href="/collections">collections</a> to explore more!</p>
+`,
+    "Can I track my order?": "<p>Yes! You will automatically receive a tracking link via the email registered to the order as soon as it ships. To check on the status of an order, grab your order number and email address and use the Track Order function (Where’s My Order?) on our website. Your info’s all there! We will also send automated updates via email when your order ships, so keep an eye out.</p><p>For international orders, tracking ends once the package arrives at the customs agency for the destination country and then at the local postal service for final delivery. At the point the package is handed off to the customs agency, we consider the package delivered.</p><p>If you have ordered several items, they are often shipped out in separate packages so that you may receive them on different days. You will receive an email with a tracking number for each package sent. For estimated delivery dates, see the information in your online receipt.</p>",
+    "I haven’t received a shipment notification.": "If you did not receive a shipping confirmation email, it may have been directed to your spam folder. If it is not there, please check your buyer receipt to see if your email is correct there. If it is not, or if you did not receive your order receipt, please reach out to us, as we may have the incorrect email on file. Make sure to include the order ID (“OR_xxxxxxxx”), the name on the shipping information, your email, and anything else that might be helpful!",
+    "My tracking number isn’t working.": "<p>Tracking numbers can take 1-2 days to appear in the shipping carrier’s system. Occasionally, the shipping carrier can experience delays in updating their site or delivering an order. </p><p>Don’t hesitate to contact us via email or chat if the tracking number is still not working within 4-5 business days.</p>",
+    "What can I do if I entered the wrong shipping address?": `
+  <p>If your order has not started , you can go to your receipt and click <strong>“Change Address”</strong> to update the shipping information.</p>
+  <p>If order has begun but the order hasn’t shipped, please reach out to us via email or chat with your order number and the correct shipping address. We’ll do our best to assist!</p>
+  <p>If your order has already shipped, here are some steps you can take:</p>
+  <ul>
+    <li><strong>Contact your local post office:</strong> Call them as soon as possible and provide the local tracking number to see if they can help update your address or hold the package for pickup.</li>
+    <li><strong>Retrieve the package from the delivery address:</strong> If you have access to or know someone at the address, reach out to them to retrieve your package.</li>
+    <li><strong>Contact the reception desk at the delivery address:</strong> If there’s a reception desk (e.g., in an apartment complex or business), ask if they have received your package or request them to hold it for you.</li>
+  </ul>
+  <p><strong>Note:</strong> We are unable to issue refunds or replacement orders for incorrect addresses provided at checkout. Please double-check your address before submitting your order.</p>
+`,
+    "What payment methods do you accept?": "<p>We accept Visa, American Express, Mastercard, Discover,Cashapp, Bitcoin, PayPal, and debit cards featuring the Mastercard or Visa logo.</p><p>We also accept international credit cards. Please note that some credit card companies may charge foreign transaction fees when purchasing a different currency. All such fees are the responsibility of the purchaser.</p>",
+    "How secure is my payment?": "<p>Very!</p><p>The connection to our site from the cart uses a valid, trusted SSL certificate (valid HTTPS) on a secure TLS connection and a strong protocol version and cipher suite.</p><p>On credit/debit cards, CVV verification is required before your order can be completed. Additionally, most credit cards and Paypal offer buyer protection for online purchases. Please contact them directly for specific details as it may vary from one financial institution to another.</p>",
+    "What is a CVV Number and how do I find it?": "<p>The CVV Number (“Card Verification Value”) on your credit card or debit card is a 3 digit number located on the back of most credit and debit cards. On American Express®, credit or debit cards, a 3-4 digit number is printed on the card’s front side.</p><p>Providing your CVV number to an online merchant proves that you actually have the physical credit or debit card – and helps to keep you safe while reducing fraud.</p><p>CVV numbers are NOT your card’s secret PIN (Personal Identification Number).</p>",
+    "What is the Billing Postal Code and why do I need it?": "<p>A postal code (also known locally in various countries as a postcode, postcode, PIN, or ZIP Code) is a series of letters or digits or both, sometimes including spaces or punctuation, included in a postal address sort mail.</p><p>The Billing Postal Code required in the “PAYMENT INFO” section should match the postal or zip code on the address registered to your credit card.</p>",
+    "What do I do if there is something wrong with my order?": "Let us know! We want to help you receive the correct product in perfect condition, so please contact us. Be sure to give us as much information as possible, and pictures are always helpful!",
+    "Something is missing from my order!": "<p>Don’t worry! If you are missing an item from your order, it was most likely shipped separately.</p><p>Refer to your shipping confirmation email to know if items are sent separately. If the email displays multiple tracking numbers, your order has been sent out in multiple packages, and your missing item should show up soon.</p><p>Don’t hesitate to contact us via email or chat if your shipping confirmation only displays one tracking number or if the missing item(s) should be under the tracking number received.</p>",
+    "My product doesn't fit. What do I do?": `
+  <p>We understand that finding the perfect fit is important! If your product doesn’t fit, here’s what you can do:</p>
+  <ul>
+    <li><strong>Check our Return Policy:</strong> Visit our <a href="/return-policy">Return Policy</a> page to review the guidelines for returns and exchanges.</li>
+    <li><strong>Initiate a Return or Exchange:</strong> Go to your order confirmation email or your account on our website to start the process. Select the item that doesn’t fit and choose to either return it for a refund or exchange it for a different size.</li>
+    <li><strong>Contact Support:</strong> If you need assistance or have specific questions about the process, our team is here to help! Reach out to us via email or chat with your order details.</li>
+  </ul>
+  <p>Please ensure that the item is unworn, unwashed, and in its original packaging to qualify for a return or exchange. Once we receive the item, we’ll process your request promptly.</p>
+  <p><strong>Tip:</strong> Refer to our <a href="/size-guide">Size Guide</a> for accurate measurements to avoid sizing issues in the future.</p>
+`,
+"What is your return and refund policy?": `
+  <p>We want you to be completely satisfied with your purchase! Our return and refund policy is designed to make the process simple and stress-free:</p>
+  <ul>
+    <li><strong>Return Window:</strong> You can return items within <strong>30 days</strong> of receiving your order.</li>
+    <li><strong>Item Condition:</strong> Products must be returned in their original condition—unworn, unwashed, and with all tags and packaging intact.</li>
+    <li><strong>How to Initiate a Return:</strong> Log in to your account, go to your order history, and select the item you wish to return. Follow the instructions to generate a return label.</li>
+    <li><strong>Refund Process:</strong> Once we receive and inspect the returned item, we will issue a refund to your original payment method. Refunds are typically processed within <strong>5–7 business days</strong>.</li>
+    <li><strong>Exchange Option:</strong> If you'd prefer a different size or item, you can select the exchange option during the return process.</li>
+    <li><strong>Non-Refundable Items:</strong> Personalized, final sale, or clearance items are not eligible for return or refund unless they arrive damaged or defective.</li>
+  </ul>
+  <p>If you have any questions or need assistance, our support team is here to help. Reach out to us via email or chat, and we’ll guide you through the process.</p>
+  <p>For detailed information, please visit our <a href="/return-policy">Return Policy</a> page.</p>
+`,
+"Shipping Warranty Terms & Conditions": `
+  <p>Our Shipping Warranty ensures that your order arrives safely and as expected. Below are the terms and conditions of our warranty:</p>
+  <ul>
+    <li><strong>Eligibility:</strong> The Shipping Warranty applies to all orders where the warranty option was selected at checkout.</li>
+    <li><strong>Covered Scenarios:</strong> 
+      <ul>
+        <li>Lost packages: If your order is confirmed lost in transit.</li>
+        <li>Damaged items: If your order arrives with significant damage.</li>
+        <li>Incorrect items: If the wrong product is delivered.</li>
+      </ul>
+    </li>
+    <li><strong>Exclusions:</strong> 
+      <ul>
+        <li>Orders delivered to an incorrect address provided by the customer.</li>
+        <li>Packages marked as delivered by the carrier but not received by the customer.</li>
+        <li>Delays caused by the shipping carrier or customs.</li>
+      </ul>
+    </li>
+    <li><strong>How to File a Claim:</strong> 
+      <ul>
+        <li>Contact us within <strong>7 days</strong> of the delivery date or expected delivery date.</li>
+        <li>Provide your order number, a detailed description of the issue, and photos if applicable (e.g., damaged items).</li>
+      </ul>
+    </li>
+    <li><strong>Resolution Options:</strong> Based on your claim, we will offer one of the following:
+      <ul>
+        <li>Replacement of the item.</li>
+        <li>Refund to your original payment method.</li>
+        <li>Store credit equivalent to the value of the item.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>If you have additional questions or need assistance with a claim, please contact our support team via email or chat. For complete details, refer to our <a href="/shipping-warranty-policy">Shipping Warranty Policy</a> page.</p>
+`,
+"How do I add a discount or promotion code?": `
+  <p>Applying a discount or promotion code to your order is simple! Here’s how you can do it:</p>
+  <ul>
+    <li><strong>At Checkout:</strong> During the checkout process, you’ll see a field labeled <strong>“Discount Code”</strong> or <strong>“Promo Code.”</strong> Enter your code into this field and click <strong>“Apply.”</strong></li>
+    <li><strong>Verify the Discount:</strong> Once the code is applied, you’ll see the discount reflected in your order total.</li>
+    <li><strong>One Code Per Order:</strong> Please note that only one discount or promotion code can be used per order unless otherwise specified.</li>
+    <li><strong>Code Not Working?</strong> Double-check that the code is entered exactly as provided (case-sensitive) and ensure it hasn’t expired or been used already.</li>
+  </ul>
+  <p>If you’re experiencing any issues applying a code, or if you have questions about eligibility, our support team is here to help. Reach out to us via email or chat for assistance.</p>
+  <p><strong>Pro Tip:</strong> Sign up for our newsletter or follow us on social media to stay updated on the latest discounts and promotions!</p>
+`,
+"Can I combine promo codes with free shipping?": `
+  <p>Our system allows one promotion to be applied per order at a time. If you have a promo code and are also eligible for free shipping, here’s how it works:</p>
+  <ul>
+    <li><strong>Automatic Free Shipping:</strong> If your order qualifies for free shipping, it will automatically apply at checkout.</li>
+    <li><strong>Promo Code Priority:</strong> If you choose to use a promo code, it will replace the free shipping offer unless otherwise specified in the promotion's terms and conditions.</li>
+  </ul>
+  <p>Check the details of your promo code to see if it can be combined with free shipping. If you’re unsure or need assistance, our support team is happy to help clarify your options.</p>
+  <p><strong>Tip:</strong> Keep an eye out for special promotions that allow you to combine discounts with free shipping!</p>
+`,
+"Do you have Gift Cards?": `
+  <p>Yes, we offer gift cards! Our gift cards are the perfect way to share the joy of shopping with your friends and family.</p>
+  <ul>
+    <li><strong>Available Amounts:</strong> Choose from a variety of denominations to suit any occasion.</li>
+    <li><strong>Delivery Options:</strong> 
+      <ul>
+        <li><strong>Digital Gift Cards:</strong> Delivered instantly via email, making them ideal for last-minute gifts.</li>
+        <li><strong>Physical Gift Cards:</strong> Available for purchase and delivered directly to your recipient's address.</li>
+      </ul>
+    </li>
+    <li><strong>How to Use:</strong> Gift cards can be redeemed during checkout by entering the unique gift card code in the payment section.</li>
+    <li><strong>No Expiration:</strong> Our gift cards do not expire, giving your recipient plenty of time to find something they love.</li>
+  </ul>
+  <p>To purchase a gift card or learn more, visit our <a href="/gift-cards">Gift Cards</a> page or contact our support team for assistance.</p>
+  <p><strong>Tip:</strong> Gift cards make an excellent choice for birthdays, holidays, or any special occasion!</p>
+`,
+
+    // Add more questions and answers here...
+  };
+
+  // Attach event listeners to FAQ links
+  document.querySelectorAll(".faq-category a").forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+
+      const question = event.target.textContent;
+      const answer = faqData[question] || "Answer not available at the moment.";
+      
+      const faqAnswerDiv = document.getElementById("faq-answer");
+      faqAnswerDiv.innerHTML = `<h3>${question}</h3><p>${answer}</p>`;
+      faqAnswerDiv.style.display = "block";
+    });
+  });
+
+// this line of code from here helps to scrool once clicked to the div that display the question and answer
+//   document.addEventListener("DOMContentLoaded", function () {
+//   const faqLinks = document.querySelectorAll(".faq-category a");
+
+//   faqLinks.forEach(link => {
+//     link.addEventListener("click", function (event) {
+//       event.preventDefault();
+//       const questionText = link.textContent;
+//       const answerDiv = document.getElementById("faq-answer");
+//       const answerHTML = faqData[questionText];
+
+//       // Toggle visibility of answer
+//       if (answerDiv.style.display === "none" || answerDiv.innerHTML !== answerHTML) {
+//         answerDiv.style.display = "block";
+//         answerDiv.innerHTML = answerHTML;
+//       } else {
+//         answerDiv.style.display = "none";
+//         answerDiv.innerHTML = "";
+//       }
+//     });
+//   });
+// });
+  </script>
 </body>
 </html>
