@@ -21,6 +21,9 @@ body {
     color: #007BFF;
   }
   
+  .check{
+    margin-top: 100px;
+  }
   h1 {
     font-size: 2rem;
     margin-bottom: 20px;

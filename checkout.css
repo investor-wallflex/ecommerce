@@ -20,10 +20,12 @@ body {
     flex: 1;
     padding: 20px;
   }
-  
+  .back{
+    margin: 20px 0 0px;
+  }
   h2,
   h3 {
-    margin: 0 0 20px;
+    margin: 30px 0 20px;
     font-weight: bold;
   }
   
@@ -158,14 +160,14 @@ a{
 .btn {
   padding: 10px 15px;
   border: none;
-  background-color: #007bff;
+  background-color: #28a745;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #218838;
 }
 
 
@@ -198,7 +200,7 @@ a{
     border-radius: 8px;
   }
 
-  input textarea{
+    input textarea{
     font-size: 16px;
   }
 }
