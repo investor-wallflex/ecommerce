@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Method</title>
+  <link rel="stylesheet" href="./checkout.css">
+</head>
+<body>
+  <div class="checkout-container">
+    <!-- Shipping Info Section -->
+    <div class="shipping-info">
+      <h2>Checkout</h2>
+      <h3>1. Shipping Info</h3>
+      <div id="address-summary">
+        <!-- Address details dynamically rendered here -->
+      </div>
+      <button id="edit-address" class="btn">Edit</button>
+    </div>
+
+    <!-- Shipping Method Section -->
+    <div class="shipping-method">
+      <h3>2. Shipping Method</h3>
+      <form id="shipping-method-form">
+        <div class="divforinputAndlabel">
+          <input type="radio" name="shipping-method" id="standard" value="Standard" checked>
+          <label for="standard">
+            Standard $5.99 <br>
+            Estimated delivery: Dec 4, 2024 to Dec 10, 2024
+          </label>
+        </div>
+        <div>
+          <input type="radio" name="shipping-method" id="rush" value="Rush">
+          <label for="rush">
+            Rush Production +$4.99 <br>
+            Estimated delivery: Dec 2, 2024 to Dec 4, 2024
+          </label>
+        </div>
+        <div>
+          <input type="radio" name="shipping-method" id="expedited" value="Expedited">
+          <label for="expedited">
+            Expedited +$17.97 <br>
+            Estimated delivery: Nov 28, 2024 to Dec 2, 2024
+          </label>
+        </div>
+        <button type="submit" class="btn">Go to Payment</button>
+      </form>
+    </div>
+
+    <!-- Order Summary Section -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div id="order-items-container">
+        <!-- Order items dynamically rendered here -->
+      </div>
+      <div class="price-breakdown">
+        <!-- Price breakdown dynamically rendered here -->
+      </div>
+      <p class="info-text">Standard orders are typically processed within 5 business days. Expedited orders are processed within 1 business day.</p>
+      <div class="security-logos">
+        <img src="norton-secured-logo.png" alt="Norton Secured">
+        <img src="truste-verified-logo.png" alt="TRUSTe Verified">
+      </div>
+      <div class="payment-logo">
+        <p>Payments fulfilled by GearLaunch</p>
+        <img src="gearlaunch-logo.png" alt="GearLaunch">
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // Retrieve data from sessionStorage
+const address = JSON.parse(sessionStorage.getItem('address'));
+const cartItems = JSON.parse(sessionStorage.getItem('cart')) || [];
+const orderItemsContainer = document.getElementById('order-items-container');
+const priceBreakdownContainer = document.querySelector('.price-breakdown');
+
+// Render Address Summary
+const addressSummary = document.getElementById('address-summary');
+addressSummary.innerHTML = `
+  <p>${address.email}</p>
+  <p>${address.fullName}</p>
+  <p>${address.street}${address.addressLine2 ? `, ${address.addressLine2}` : ''}</p>
+  <p>${address.city}, ${address.state} ${address.zip}</p>
+  <p>${address.phone}</p>
+`;
+
+// Render Order Summary
+function renderOrderSummary() {
+  let subtotal = 0;
+  orderItemsContainer.innerHTML = ''; // Clear previous items
+
+  // Render each cart item
+  cartItems.forEach(item => {
+    const itemElement = document.createElement('div');
+    itemElement.classList.add('order-item');
+    
+    itemElement.innerHTML = `
+      <div class="order-item-details">
+        <img src="${item.imgSrc}" alt="${item.name}" class="order-item-image">
+        <div class="order-item-info">
+          <p><strong>${item.name}</strong></p>
+          <p>Qty: ${item.quantity}</p>
+          <p>Price: $${(item.price * item.quantity).toFixed(2)}</p>
+        </div>
+      </div>
+    `;
+
+    orderItemsContainer.appendChild(itemElement);
+    subtotal += item.price * item.quantity; // Update subtotal
+  });
+
+  // Calculate totals
+  const shippingFee = 5.99;
+  const warrantyFee = 0.98;
+  const taxRate = 0.07;
+  const tax = subtotal * taxRate;
+  const total = subtotal + tax + shippingFee + warrantyFee;
+
+  // Update price breakdown
+  priceBreakdownContainer.innerHTML = `
+    <p>Subtotal: <span>$${subtotal.toFixed(2)}</span></p>
+    <p>Shipping Warranty: <span>$${warrantyFee.toFixed(2)}</span></p>
+    <p>Shipping: <span>$${shippingFee.toFixed(2)}</span></p>
+    <p>Tax (7%): <span>$${tax.toFixed(2)}</span></p>
+    <hr>
+    <p class="total">Total: <span>USD $${total.toFixed(2)}</span></p>
+  `;
+}
+
+// Initialize the order summary
+renderOrderSummary();
+
+
+  </script>
+</body>
+</html>
