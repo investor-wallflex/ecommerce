@@ -15,7 +15,7 @@
       <div id="address-summary">
         <!-- Address details dynamically rendered here -->
       </div>
-      <button id="edit-address" class="btn">Edit</button>
+      <!-- <button id="edit-address" class="btn">Edit</button> -->
     </div>
 
     <!-- Shipping Method Section -->
@@ -283,20 +283,23 @@
 
 
  // Ensure modal functionality is correct
-document.addEventListener("click", (event) => {
-  if (event.target && event.target.classList.contains("submit-btn")) {
-    event.preventDefault(); // Prevent form submission
-    const modal = document.getElementById("error-modal");
-    modal.style.display = "block"; // Show the modal
-  }
-});
+// document.addEventListener("click", (event) => {
+//   if (event.target && event.target.classList.contains("submit-btn")) {
+//     event.preventDefault(); // Prevent form submission
+//     const modal = document.getElementById("error-modal");
+//     modal.style.display = "block"; // Show the modal
+//   }
+// });
 
-// Close the modal when clicking close buttons or outside the modal content
+// // Close the modal when clicking close buttons or outside the modal content
 const modal = document.getElementById("error-modal");
 const closeButton = document.querySelector(".close-button");
 const closeModalButton = document.getElementById("close-modal");
+const paymentForm = document.querySelector(".payment-form");
+
 
 closeButton.addEventListener("click", () => {
+   event.preventDefault();
   modal.style.display = "none";
 });
 

@@ -286,7 +286,8 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  width: 400px;
+  width: 300px;
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -551,5 +552,39 @@ body {
     .shipping-method .btn {
       width: 100%;
     }
+    .payment-form-container {
+      padding: 15px;
+    }
+  
+    .payment-form .form-group-row {
+      flex-direction: column; /* Stack inputs vertically on smaller screens */
+    }
+  
+    .payment-form input {
+      padding: 8px; /* Slightly smaller padding for compact view */
+    }
+  
+    .submit-btn {
+      font-size: 14px; /* Adjust button font size */
+      padding: 10px;
+    }
   }
+  @media (max-width: 480px) {
+    body{
+      padding: 20px;
+    }
+    .payment-icon {
+      width: 30px; /* Reduce icon size on very small screens */
+    }
+  
+    .card-logos img {
+      width: 30px; /* Scale down card logos */
+    }
+  
+    .submit-btn {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
   
