@@ -188,9 +188,7 @@ a{
   input textarea{
     font-size: 16px;
   }
-  .row {
-    flex-direction: column;
-  }
+  
 }
 
 @media (max-width: 480px) {
@@ -205,10 +203,10 @@ a{
     border-radius: 8px;
   }
 
-    input textarea{
+  .shipping-info input,
+  .shipping-info textarea,
+  .shipping-info select {
     font-size: 16px;
   }
-  .row {
-    flex-direction: column;
-  }
+ 
 }
