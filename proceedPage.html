@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f9;
+      color: #333;
+      padding: 20px;
+    }
+
+    .countdown {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      color: #555;
+      margin-top: 20px;
+      display: none; /* Hidden by default */
+    }
+
+    .message span {
+      color: #007BFF;
+      font-weight: bold;
+    }
+    a{
+        color: #007BFF;
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Processing Your Payment</h1>
+  <p>Please wait while we process your order.</p>
+  <div class="countdown" id="countdown">10</div>
+  <div class="message" id="message">
+    Your payment is yet to be confirmed. Once confirmed, your order tracking number will be sent to your email. Please check your <span>inbox</span> or <span>spam</span> folder.
+   <br> <a href="index.html" class="go-back">&larr; Continue shopping</a>
+  </div>
+
+
+    
+
+  <script>
+    let countdownElement = document.getElementById("countdown");
+    let messageElement = document.getElementById("message");
+    let countdownValue = 10;
+
+    const countdownTimer = setInterval(() => {
+      countdownValue--;
+      countdownElement.textContent = countdownValue;
+
+      if (countdownValue <= 0) {
+        clearInterval(countdownTimer);
+        countdownElement.style.display = "none"; // Hide countdown
+        messageElement.style.display = "block"; // Show message
+      }
+    }, 1000); // Decrement every second
+  </script>
+</body>
+</html>

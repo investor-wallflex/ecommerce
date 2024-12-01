@@ -85,12 +85,12 @@
       </div>
       <p class="info-text">Standard orders are typically processed within 5 business days. Expedited orders are processed within 1 business day.</p>
       <div class="security-logos">
-        <img src="norton-secured-logo.png" alt="Norton Secured">
-        <img src="truste-verified-logo.png" alt="TRUSTe Verified">
+        <img src="./image/norton.PNG" alt="Norton Secured">
+        <img src="./image/trustee.PNG" alt="TRUSTe Verified">
       </div>
       <div class="payment-logo">
         <p>Payments fulfilled by GearLaunch</p>
-        <img src="gearlaunch-logo.png" alt="GearLaunch">
+        <img src="./image/gear.PNG" alt="GearLaunch">
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@
       <div id="bitcoin-modal" class="modal hidden">
         <div class="modal-content">
           <button id="close-bitcoin-modal" class="close-button">&times;</button>
-          <h2>Receive Bitcoin</h2>
+          <h2>Accept Bitcoin</h2>
           <p class="warning">
             <strong>Only send BTC tokens via the Bitcoin network.</strong><br>
             You could lose funds if you send other currencies or use another network.
@@ -110,7 +110,7 @@
             <p>Your Bitcoin address:</p>
             <input type="text" class="bitcoin-address" value="35u4DPaQbGCzu3VM9RpwRasqiVhD39rt4r" readonly>
             <button id="copy-bitcoin-address" class="copy-button">Copy to clipboard</button>
-            <button id="share-bitcoin-address" class="share-button">Share address</button>
+            <button id="share-bitcoin-address" class="share-button"><a class="proceed" href="./proceedPage.html">Proceed</a></button>
           </div>
         </div>
       </div>
@@ -258,7 +258,7 @@
           </div>
           <div class="form-group-row">
             <div class="form-group">
-              <label for="expiry-date">Expiration Date (MM/YY)</label>
+              <label for="expiry-date">Expiration Date</label>
               <input type="text" id="expiry-date" placeholder="MM/YY" required>
             </div>
             <div class="form-group">
@@ -292,26 +292,37 @@
 // });
 
 // // Close the modal when clicking close buttons or outside the modal content
-const modal = document.getElementById("error-modal");
-const closeButton = document.querySelector(".close-button");
-const closeModalButton = document.getElementById("close-modal");
-const paymentForm = document.querySelector(".payment-form");
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("error-modal");
+    modal.style.display = "none"; // Ensure modal is hidden
+  });
 
+  // Modal functionality
+  const modal = document.getElementById("error-modal");
+  const closeButton = document.querySelector(".close-button");
+  const closeModalButton = document.getElementById("close-modal");
 
-closeButton.addEventListener("click", () => {
-   event.preventDefault();
-  modal.style.display = "none";
-});
-
-closeModalButton.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-window.addEventListener("click", (event) => {
-  if (event.target === modal) {
+  closeButton.addEventListener("click", () => {
     modal.style.display = "none";
-  }
-});
+  });
+
+  closeModalButton.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Show modal only when "Place Order" button is clicked
+  document.addEventListener("click", (event) => {
+    if (event.target && event.target.classList.contains("submit-btn")) {
+      event.preventDefault(); // Prevent form submission
+      modal.style.display = "block"; // Show the modal
+    }
+  });
 
 
   // Bitcoin Payment Modal Logic
